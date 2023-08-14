@@ -3,7 +3,7 @@ package HW_2;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList();
+        LinkedList<Integer> list = new LinkedList<>();
 
         list.add(5);
         list.add(3);

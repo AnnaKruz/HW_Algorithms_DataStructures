@@ -174,8 +174,7 @@ public class LinkedList<T extends Comparable<T>> {
         T value;
         Node next;
 
-        Node() {
-        }
+        //Node() {         }
 
         Node(T value) {
             this.value = value;
