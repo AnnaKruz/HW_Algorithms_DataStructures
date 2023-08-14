@@ -148,16 +148,32 @@ public class LinkedList<T extends Comparable<T>> {
         int rightMarker = rightBorder;
         T pivot = getValue((leftMarker + rightMarker) / 2);
         while (leftMarker <= rightMarker) {
-            while (getValue(leftMarker).compareTo(pivot) < 0) leftMarker++;
-            while (getValue(rightMarker).compareTo(pivot) > 0) rightMarker--;
+            while (getValue(leftMarker).compareTo(pivot) < 0)
+                leftMarker++;
+            while (getValue(rightMarker).compareTo(pivot) > 0)
+                rightMarker--;
             if (leftMarker <= rightMarker) {
                 swap(leftMarker, rightMarker);
                 leftMarker++;
                 rightMarker--;
             }
         }
-        if (leftMarker < rightBorder) quickSort(leftMarker, rightBorder);
-        if (leftBorder < rightMarker) quickSort(leftBorder, rightMarker);
+        if (leftMarker < rightBorder)
+            quickSort(leftMarker, rightBorder);
+        if (leftBorder < rightMarker)
+            quickSort(leftBorder, rightMarker);
+    }
+
+    public void reverse() {
+        Node currentNode = root;
+        Node prevNode = null;
+        while (currentNode != null) {
+            Node next = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = next;
+        }
+        root = prevNode;
     }
 
     public void print() {
