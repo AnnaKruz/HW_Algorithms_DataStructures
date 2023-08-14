@@ -1,4 +1,4 @@
-package Seminar3;
+package HW_2;
 
 public class Main {
 
